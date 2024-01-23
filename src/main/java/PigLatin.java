@@ -39,10 +39,39 @@ public class PigLatin {
         //postcondition: returns the pig latin equivalent of sWord
         // more code should go here
 
-	    public String hasQu(String a){
+	   
  	 if(a.substring(0,2).equals("qu"))
 	  return a.substring(2) + "quay";
-    		}
+	    //if have qu at beginning
+
+	if(a.substring(0,1).equals("a")||a.substring(0,1).equals("e")
+ 	 ||a.substring(0,1).equals("i")||a.substring(0,1).equals("o")||
+ 	 a.substring(0,1).equals("u"))
+  	return a + "way";
+	     //starts with vowel
+
+	for( int x = 0; x < a.length(); x++)
+	  if(a.substring(x,x+1).equals("a") != true|| a.substring(x,x+1).equals("e") != true 
+ 	 || a.substring(x,x+1).equals("i") != true || a.substring(x,x+1).equals("o") !=true
+  	|| a.substring(x,x+1).equals("u") != true)
+ 	 return a + "ay";
+	    //all consonants
+
+	  int numofCons = 0;
+ 	 for(int x = 0; x < a.length(); x++){
+  	if(a.substring(x,x+1).equals("a") == true|| a.substring(x,x+1).equals("e") == true 
+  	|| a.substring(x,x+1).equals("i") == true || a.substring(x,x+1).equals("o") == true
+  	|| a.substring(x,x+1).equals("u")== true)
+  	break;
+ 	 else
+  	numofCons++;
+	 }
+	if(numofCons > 0)
+	return a.substring(numofCons) + a.substring(0,numofCons) + "ay";
+	//beginning consonants moved to end
+	    
+}
+	
 	    
 	    if(findFirstVowel(sWord) == -1) {
 		    return sWord + "ay";
