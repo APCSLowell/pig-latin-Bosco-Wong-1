@@ -27,7 +27,7 @@ public class PigLatin {
 	        System.out.println(pigLatin(lines[i]));
 	    }
     }
-    public int findFirstVowel(String sWord) {
+    public int findFirstVowel(String a) {
    
 
  	 for(int x = 0; x < a.length(); x++){
@@ -84,7 +84,7 @@ public class PigLatin {
 		    return a + "way";
 	    }
 	    if(findFirstVowel(a) == -1) {
-		    return sWord + "ay";
+		    return a + "ay";
 	    }
 	    else {
 		return "ERROR!";
