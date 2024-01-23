@@ -28,7 +28,7 @@ public class PigLatin {
 	    }
     }
     public int findFirstVowel(String sWord) {
-      public String vowels(String a){
+   
 
  	 for(int x = 0; x < a.length(); x++){
   	if(a.substring(x,x+1).equals("a") == true|| a.substring(x,x+1).equals("e") == true 
