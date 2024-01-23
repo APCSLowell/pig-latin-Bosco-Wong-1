@@ -28,9 +28,16 @@ public class PigLatin {
 	    }
     }
     public int findFirstVowel(String sWord) {
-        //precondition: sWord is a valid String of length greater than 0.
-        //postcondition: returns the position of the first vowel in sWord.  If there are no vowels, returns -1
-	    // your code goes here
+      public String vowels(String a){
+
+ 	 for(int x = 0; x < a.length(); x++){
+  	if(a.substring(x,x+1).equals("a") == true|| a.substring(x,x+1).equals("e") == true 
+  	|| a.substring(x,x+1).equals("i") == true || a.substring(x,x+1).equals("o") == true
+  	|| a.substring(x,x+1).equals("u")== true)
+  	return x;
+	 }
+	    
+	
         return -1;
     }
 
@@ -44,17 +51,18 @@ public class PigLatin {
 	  return a.substring(2) + "quay";
 	    //if have qu at beginning
 
-	if(a.substring(0,1).equals("a")||a.substring(0,1).equals("e")
- 	 ||a.substring(0,1).equals("i")||a.substring(0,1).equals("o")||
- 	 a.substring(0,1).equals("u"))
-  	return a + "way";
-	     //starts with vowel
-
+	int n = 0;
+	int placeholder = 0;
 	for( int x = 0; x < a.length(); x++)
-	  if(a.substring(x,x+1).equals("a") != true|| a.substring(x,x+1).equals("e") != true 
- 	 || a.substring(x,x+1).equals("i") != true || a.substring(x,x+1).equals("o") !=true
-  	|| a.substring(x,x+1).equals("u") != true)
+	  if(a.substring(x,x+1).equals("a") != true && a.substring(x,x+1).equals("e") != true 
+ 	 && a.substring(x,x+1).equals("i") != true && a.substring(x,x+1).equals("o") !=true
+  	&& a.substring(x,x+1).equals("u") != true)
+	placeholder++;
+	else
+	n++;
+	if(n==0)
  	 return a + "ay";
+	    
 	    //all consonants
 
 	  int numofCons = 0;
@@ -70,10 +78,12 @@ public class PigLatin {
 	return a.substring(numofCons) + a.substring(0,numofCons) + "ay";
 	//beginning consonants moved to end
 	    
-}
+
 	
-	    
-	    if(findFirstVowel(sWord) == -1) {
+	    if(findFirstVowel(a) == 0){
+		    return a + "way";
+	    }
+	    if(findFirstVowel(a) == -1) {
 		    return sWord + "ay";
 	    }
 	    else {
